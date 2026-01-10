@@ -104,6 +104,7 @@ Using a standard 80/20 stratified split with a baseline Logistic Regression pipe
 - **Log Loss:** ~0.303
 
 ## Project Structure: 
+<img width="507" height="525" alt="image" src="https://github.com/user-attachments/assets/bcba5e5a-11c7-42a9-8812-ff9f59a2a501" />
 .
 ├── data/
 │   └── cancer-risk-factors.xlsx
