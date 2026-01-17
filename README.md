@@ -37,26 +37,31 @@ So:
 - **Features (X):** all other columns (excluding `Overall_Risk_Score`)
 
 ---
-
-## Methodology (What I did + why)
+## Tools/Libraries
+- Python
+- pandas
+- numpy
+- sickit-learn
+---
+## Methodology 
 
 ### 1) Load + basic checks
 - Read the Excel file into pandas
 - Inspect column types and missing values
 
-Why: No model is trustworthy if the data is messy or inconsistent.
+Reasoning: No model is trustworthy if the data is messy or inconsistent.
 
-### 2) Preprocessing pipeline (reproducible)
+### 2) Preprocessing pipeline 
 Built with scikit-learn `Pipeline` + `ColumnTransformer`:
 - Numeric features: median imputation + scaling
 - Categorical features: most-frequent imputation + one-hot encoding
 
-Why: This avoids training/serving mismatch and keeps preprocessing consistent.
+Reasoning: This avoids training/serving mismatch and keeps preprocessing consistent.
 
-### 3) Baseline model (interpretable)
+### 3) Baseline model 
 **Logistic Regression (multiclass)**
 
-Why:
+Reasoning:
 - Strong baseline
 - Fast and stable
 - Easier to reason about than many black-box models
@@ -65,9 +70,9 @@ Why:
 Using a stratified train/test split and reporting:
 - Accuracy
 - Macro F1 (more fair for multi-class imbalance)
-- Log Loss (quality of probability estimates)
+- Log Loss (i.e. quality of probability estimates)
 
-Why: Accuracy alone can be misleading when class balance is uneven.
+Reasoning: Accuracy alone can be misleading when class balance is uneven.
 
 ### 5) Output scoring
 For each patient:
@@ -79,7 +84,7 @@ For each patient:
 
 ## Results / Summary
 
-Running the baseline Logistic Regression pipeline typically yields strong performance on this dataset. Your exact metrics may vary based on the random split and parameters, but the script prints:
+Running the baseline Logistic Regression pipeline typically yields strong performance on this dataset. The exact metrics may vary based on the random split and parameters, but the script prints:
 
 - Accuracy
 - Macro F1
@@ -94,7 +99,7 @@ Running the baseline Logistic Regression pipeline typically yields strong perfor
 
 ---
 
-## How to Run
+## Run
 
 ### 1) Install dependencies
 ```bash
@@ -119,4 +124,5 @@ A CSV will be created at:
 - Add probability calibration checks (reliability curves)
 - Add feature importance and leakage sanity checks
 - Add a short data dictionary (what each column means)
+- Package this as a small CLI Tool or Streamlit App
 
