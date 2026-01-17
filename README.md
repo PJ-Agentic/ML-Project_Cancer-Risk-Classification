@@ -90,17 +90,7 @@ Running the baseline Logistic Regression pipeline typically yields strong perfor
 
 ## Project Structure
 
-.
-├── data/
-│   └── cancer-risk-factors.xlsx
-├── notebooks/
-│   └── README.md
-├── src/
-│   └── train_and_score.py
-├── outputs/
-│   └── patient_cancer_risk_predictions.csv
-├── requirements.txt
-└── README.md
+<img width="343" height="253" alt="image" src="https://github.com/user-attachments/assets/0926f487-bdd0-4a46-9318-589a634083e3" />
 
 ---
 
